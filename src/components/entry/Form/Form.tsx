@@ -1,8 +1,17 @@
 import React from 'react';
+import { formatPrice } from '../../../helpers/formatPrice';
+import { useAppSelector } from '../../../hooks/useAppSelector';
 import Button from '../Button/Button';
 import './Form.sass';
 
 function Form(): React.ReactElement {
+  const cartProducts = useAppSelector((state) => state.cartReducer);
+
+  const result = cartProducts.reduce(
+    (accum, current) => accum + Number(current.price) * current.count,
+    0,
+  );
+
   return (
     <form action="" className="form">
       <h2 className="form__title">Оформление заказа</h2>
@@ -13,9 +22,9 @@ function Form(): React.ReactElement {
       </fieldset>
       <p className="form__price-wrapper">
         Итого:
-        <span className="form__price">128 000</span>
+        <span className="form__price">{`${formatPrice(result)} руб.`}</span>
       </p>
-      <Button parentClassName="form">Оформить заказ</Button>
+      <Button onClick={() => ''} parentClassName="form">Оформить заказ</Button>
     </form>
   );
 }

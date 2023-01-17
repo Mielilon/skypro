@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatPrice } from '../../../helpers/formatPrice';
 import './Card.sass';
 import CardControl from './CardControl';
 import CardCounter from './CardCounter';
@@ -13,6 +14,7 @@ type CardProps = {
   title: string
   desc: string
   price: string
+  id: number
 };
 
 function Card(
@@ -25,6 +27,7 @@ function Card(
     title,
     desc,
     price,
+    id,
   }: CardProps,
 ): React.ReactElement {
   return (
@@ -33,15 +36,15 @@ function Card(
 }
     >
       <>
-        { !isVertical && <CardControl /> }
+        { !isVertical && <CardControl currentId={id} /> }
         <img className="card__img" src={`./img/${img}`} alt={title} />
         <div className="card__info">
           <h3 className="card__title">{title}</h3>
           <p className="card__desc">{desc}</p>
-          <p className="card__price">{`${price.split(/(?=(?:\d{3})+(?!\d))/).join(' ')} руб.`}</p>
+          <p className="card__price">{`${formatPrice(price)} руб.`}</p>
         </div>
-        { isVertical && <CardLinkList />}
-        { isVertical && isCounter && <CardCounter parentClassName="card" />}
+        { isVertical && <CardLinkList currentId={id} />}
+        { isVertical && isCounter && <CardCounter parentClassName="card" currentId={id} />}
       </>
     </div>
   );

@@ -26,6 +26,7 @@ function Catalog({ sortType }: CatalogProps): React.ReactElement {
           title={product.title}
           desc={product.desc}
           price={product.price}
+          id={product.id}
         />
       ))}
     </div>

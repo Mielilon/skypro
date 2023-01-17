@@ -1,5 +1,5 @@
 @use '../../../assets/styles/variables' as *
-  
+
 .card-list
   display: flex
   flex-direction: column
@@ -23,3 +23,12 @@
   display: flex
   align-items: center
   gap: 7px
+  @media (max-width: $mobile-width)
+    justify-content: center
+    width: 100%
+    gap: 14px
+.card-list__items
+  width: 100%
+.card-list__button
+  @media (max-width: $mobile-width)
+    flex-grow: 1

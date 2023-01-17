@@ -1,10 +1,19 @@
+@use '../../../assets/styles/variables' as *
+
 .main
   padding: 0 24px
+  @media (max-width: $mobile-width)
+    padding: 0 16px
 .main__container
   padding: 32px 0
+  @media (max-width: $mobile-width)
+    padding: 16px 0
   &--catalog
     flex-direction: column
     align-items: center
     justify-content: flex-start
   &--cart
     gap: 33px
+    @media (max-width: $tablet-width)
+      flex-direction: column
+      gap: 64px

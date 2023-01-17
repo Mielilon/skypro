@@ -9,15 +9,11 @@ function App(): React.ReactElement {
     <BrowserRouter>
       <Routes>
         <Route
-          path={AppRoute.CATALOG}
-          element={<CatalogPage />}
-        />
-        <Route
           path={AppRoute.CART}
           element={<CartPage />}
         />
         <Route
-          path="*"
+          path={AppRoute.CATALOG}
           element={<CatalogPage />}
         />
       </Routes>

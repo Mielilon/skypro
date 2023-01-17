@@ -2,15 +2,26 @@
 
 .header
   padding: 0 24px
+  @media (max-width: $mobile-width)
+    padding: 0
 .header__container
   background-color: $gray-color
   padding: 16px 4px
   flex-direction: row
   align-items: center
   justify-content: space-between
+  @media (max-width: $mobile-width)
+    padding: 30px 16px 10px
 .header__menu
   display: flex
   align-items: center
   justify-content: flex-start
   gap: 32px
   color: $white-color
+  @media (max-width: $mobile-width)
+    gap: 10px
+.header__nav
+  @media (max-width: $mobile-width)
+    font-size: 14px
+.menu__link
+  color: $black-color

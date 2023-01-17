@@ -1,4 +1,9 @@
 export enum AppRoute {
   CATALOG = '/',
-  CART = '/:board',
+  CART = '/cart',
+}
+
+export enum CounterValue {
+  MAX = 99,
+  MIN = 1,
 }

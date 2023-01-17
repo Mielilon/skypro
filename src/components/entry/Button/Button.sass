@@ -1,11 +1,16 @@
 @use '../../../assets/styles/variables' as *
-  
+
 .button
   padding: 10px 34px
   border: 1px solid $black-color
   border-radius: 50px
   font-size: 14px
+  color: $black-color
+  text-align: center
   &--darken
     background-color: $black-color
     color: $white-color
+  @media (max-width: $mobile-width)
+    padding: 10px 14px
+    font-size: 12px
 

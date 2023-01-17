@@ -26,7 +26,7 @@ function Select({ parentClassName, setSortType }: SelectProps): React.ReactEleme
     setSortType(selectValue);
   }, [selectValue]);
 
-  const selectChangeHandle = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const selectChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectValue(e.target.value);
   };
 
@@ -37,7 +37,7 @@ function Select({ parentClassName, setSortType }: SelectProps): React.ReactEleme
         id="sorting"
         className="select"
         value={selectValue}
-        onChange={(e) => selectChangeHandle(e)}
+        onChange={(e) => selectChangeHandler(e)}
       >
         {options.map((option) => (
           <option key={option.id} value={option.value} className="select__option">
