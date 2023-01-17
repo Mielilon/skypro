@@ -55,6 +55,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
+    path: `${__dirname}/public`,
     filename: 'bundle.js',
   },
   devServer: {
@@ -67,6 +68,5 @@ module.exports = {
       publicPath: 'http://localhost:3333/dist/',
     },
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
   devtool: 'eval-source-map',
 };
